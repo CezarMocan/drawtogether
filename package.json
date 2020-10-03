@@ -6,13 +6,11 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon babel-node app.mjs",
     "prebuild": "rm -rf .next",
     "build": "next build",
-    "start": "next build && next start",
-    "export": "rm -rf .next && next build && next export",
-    "sync:s3": "AWS_DEFAULT_PROFILE=cezar-cli aws s3 sync out s3://virtualis.vr",
-    "deploy": "npm run export && npm run sync:s3"
+    "start:production": "next build && NODE_ENV=production PORT=80 babel-node app.mjs",
+    "ssh-connect": "ssh -i drawtogether.pem ubuntu@ec2-3-14-29-11.us-east-2.compute.amazonaws.com"
   },
   "dependencies": {
     "@babel/cli": "^7.11.6",
