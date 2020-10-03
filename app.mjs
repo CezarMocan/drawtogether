@@ -17,7 +17,7 @@ app.prepare().then(() => {
   server.use(bodyParser.urlencoded({ extended: true }))
   var http = httpModule.Server(server)
   var io = ioModule(http)
-  var port = 3000;
+  var port = process.env.PORT || 3000;
 
   if (process.env.NODE_ENV === "production") {
     server.get(
