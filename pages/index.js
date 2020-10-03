@@ -161,18 +161,15 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    console.log(window.location.hash)
     this.setState({
       isAdmin: (window.location.hash == '#admin')
     })
     this.io = io('/')
     this.io.on('connect', () => {      
       this.sessionId = this.io.id
-      console.log('connected: ', this.io.id)
       this.doCountdown()
     })
     this.io.on('startPath', ( data, sessionId ) => {
-      console.log('startPath: ', sessionId, data)
       this.startPath(data.point, data.color, sessionId);      
     })
     
@@ -187,12 +184,10 @@ class Index extends React.Component {
     })
 
     this.io.on('state', (data) => {
-      console.log('State update: ', data)
       this.updateGrid(data)
     })
 
     this.io.on('newPrompt', (data) => {
-      console.log('newPrompt: ', data)
       this.grid.opacity = 1
       this.drawing.removeChildren()
       this.setState({
@@ -239,7 +234,6 @@ class Index extends React.Component {
   }
 
   onAdminPromptClick = (data) => (evt) => {
-    console.log('onAdminPromptClick: ', data)
     this.io.emit('sendNewPrompt', { prompt: data.prompt, time: data.time })
   }
 
@@ -254,7 +248,6 @@ class Index extends React.Component {
       'time-left': true,
       'red': (timeLeft < 10)
     })
-    console.log('img: ', this.images)
     return (
       <>
         { isAdmin && 

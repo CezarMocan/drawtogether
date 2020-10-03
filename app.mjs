@@ -39,7 +39,6 @@ app.prepare().then(() => {
   })
 
   server.get('*', (req, res, next) => {
-    // console.log('Request: ', req.originalUrl)
     return handle(req, res)
   })
 
@@ -80,7 +79,6 @@ app.prepare().then(() => {
 
   // A client connected to the socket
   io.on('connection', (socket) => {
-    console.log('On connect!!!', socket.id)
     sox[socket.id] = {
       socket,
       name: socket.id
@@ -94,7 +92,6 @@ app.prepare().then(() => {
     })
 
     socket.on( 'startPath', (data, sessionId ) => {
-      console.log(data, sessionId)
       socket.broadcast.emit( 'startPath', data, sessionId );
     });
 
@@ -117,7 +114,6 @@ app.prepare().then(() => {
     })
 
     socket.on('disconnect', () => {
-      console.log('on disconnect: ', socket.id)
       delete sox[socket.id]
       refreshGrid()
     })
