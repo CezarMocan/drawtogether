@@ -20,7 +20,7 @@ const prompts = [
     time: 45
   },
   {
-    prompt: 'a straight line.',
+    prompt: 'a straight line, across the canvas.',
     time: 15
   },
   {
@@ -32,7 +32,7 @@ const prompts = [
     time: 45
   },
   {
-    prompt: 'a perfect circle.',
+    prompt: 'a large, perfect circle.',
     time: 15
   },
   {
@@ -44,7 +44,7 @@ const prompts = [
     time: 45
   },
   {
-    prompt: 'two squares, inside of each other',
+    prompt: 'two large squares, inside of each other',
     time: 20
   },
   {
