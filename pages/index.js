@@ -12,27 +12,43 @@ const CANVAS_HEIGHT = 600
 
 const prompts = [
   {
-    prompt: 'Draw a sheep facing to the left.',
-    time: 10
+    prompt: 'a happy sheep facing left.',
+    time: 45
   },
   {
-    prompt: 'Draw a resistor.',
-    time: 10
+    prompt: 'three droopy plants.',
+    time: 45
   },
   {
-    prompt: 'Draw a landscape with a ruin.',
-    time: 10
+    prompt: 'a large monster going to work.',
+    time: 45
   },
   {
-    prompt: 'Draw a monument to 2020',
-    time: 10
+    prompt: 'a clock wearing pijamas.',
+    time: 45
+  },
+  {
+    prompt: 'a very, very grumpy cat.',
+    time: 45
+  },
+  {
+    prompt: '"Mona Lisa".',
+    time: 45
+  },
+  {
+    prompt: 'a monument to 2020.',
+    time: 45
+  },
+  {
+    prompt: 'a Jackson Pollock.',
+    time: 45
   }
 ]
 
 class Index extends React.Component {
   state = {
     name: null,
-    prompt: 'Wait for instructions...',
+    prompt: 'We will collectively do a series of drawings. For now, hold on and wait for instructions...',
     timeLeft: -1,
     isAdmin: true,
     finished: false
@@ -269,6 +285,7 @@ class Index extends React.Component {
           finished &&
           <div className="finished">
             <h1> Thank you for drawing with me! </h1>
+            <br/>
             { this.images.map(o => {
               return (
                 <div className="finished-item">
@@ -297,7 +314,7 @@ class Index extends React.Component {
           <div className="main">
             <div className="main-text">
               <div className="main-prompt">
-                { prompt }
+                { (timeLeft != -1) && 'Draw' } { prompt }
               </div>
               <div className={timeCls}>
                 { stringTime }
