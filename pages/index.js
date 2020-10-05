@@ -20,12 +20,20 @@ const prompts = [
     time: 45
   },
   {
+    prompt: 'a straight line.',
+    time: 15
+  },
+  {
     prompt: 'a large monster going to work.',
     time: 45
   },
   {
     prompt: 'a clock wearing pijamas.',
     time: 45
+  },
+  {
+    prompt: 'a perfect circle.',
+    time: 15
   },
   {
     prompt: 'a very, very grumpy cat.',
@@ -36,12 +44,16 @@ const prompts = [
     time: 45
   },
   {
+    prompt: 'two squares, inside of each other',
+    time: 20
+  },
+  {
     prompt: 'a monument to 2020.',
     time: 45
   },
   {
     prompt: 'a Jackson Pollock.',
-    time: 45
+    time: 30
   }
 ]
 
